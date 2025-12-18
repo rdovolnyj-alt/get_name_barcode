@@ -9,7 +9,7 @@ headers = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0.1 Safari/605.1.15"
 }
 
-@app.get("/get_barcode")
+@app.get("/")
 def get_barcode(barcode: str):
     pattern = r"\s*-\s*Штрих-код.*"
     try:
@@ -27,4 +27,4 @@ def get_barcode(barcode: str):
         return {"product_name": "Ошибка запроса"}
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=10000)
